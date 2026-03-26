@@ -51,7 +51,7 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-    Node* siguiente = list->next;
+    Node* siguiente = list->current->next;
     void*¨dato = siguiente->data;
     list->current = siguiente;
     return dato;
