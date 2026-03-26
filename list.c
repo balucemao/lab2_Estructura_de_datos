@@ -47,6 +47,7 @@ void * firstList(List * list) {
     Node* auxNode = list->head;
     void* dato = list->head->data;
     list->current = auxNode;
+    free(auxNode);
     return dato;
 }
 
@@ -54,6 +55,7 @@ void * nextList(List * list) {
     Node* siguiente = list->current->next;
     void* dato = siguiente->data;
     list->current = siguiente;
+    free(auxNode);
     return dato;
 }
 

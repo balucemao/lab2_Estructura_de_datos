@@ -101,3 +101,15 @@ Thu Mar 26 11:39:57 PM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 d0c25f4
+Thu Mar 26 11:40:34 PM UTC 2026: 
+ list.c | 2 ++
+ 1 file changed, 2 insertions(+)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘nextList’:
+list.c:58:10: error: ‘auxNode’ undeclared (first use in this function); did you mean ‘Node’?
+   58 |     free(auxNode);
+      |          ^~~~~~~
+      |          Node
+list.c:58:10: note: each undeclared identifier is reported only once for each function it appears in
+488b3f0
