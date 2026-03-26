@@ -45,7 +45,7 @@ List * createList() {
 
 void * firstList(List * list) {
     Node* auxNode = list->head;
-    void* dato = auxNode->data;
+    void* dato = list->head->data;
     list->current = auxNode;
     return dato;
 }
