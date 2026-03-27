@@ -32,7 +32,9 @@ Node * createNode(void * data) {
 // Recuerda reservar memoria al puntero usando malloc o calloc.
 
 List * createList() {
+    //se reserva memoria para la lista
     List *lista = (List*)malloc(sizeof(List));
+    //se inicializan valores de la lista
     lista->head = NULL;
     lista->tail = NULL;
     lista->current = NULL;
@@ -44,18 +46,27 @@ List * createList() {
 //   - La segunda función retorna el dato del nodo a continuación del current y actualiza el current para que apunte a ese nodo.
 
 void * firstList(List * list) {
+    //se revisa si la lista es valida
     if (list == NULL)return NULL;
+    //se revisa si el primer nodo es valido
     if (list->head == NULL)return NULL;
+    //se crea un nodo que apunta al primer nodo de la lista
     Node* auxNode = list->head;
+    //se crea un dato que apunta al dato dentro del primer nodo
     void* dato = list->head->data;
+    //el nodo actual se actualiza al primer elemento de la lista
     list->current = auxNode;
     return dato;
 }
 
 void * nextList(List * list) {
+    //se verifica si la lista es valida o si el actual de la lista es valido o si existe algo despues del actual
     if (list == NULL || list->current == NULL || list->current->next == NULL)return NULL;
+    //se crea un nodo que apunta al siguiente del nodo actual
     Node* siguiente = list->current->next;
+    //se crea dato que apunta al dato almacenado en el nodo siguiente al actual
     void* dato = siguiente->data;
+    //nodo actual es el que antes fue siguiente 
     list->current = siguiente;
     return dato;
 }
@@ -65,17 +76,25 @@ void * nextList(List * list) {
 //   - La segunda función retorna el dato del nodo anterior a current y actualiza el current para que apunte a ese nodo.
 
 void * lastList(List * list) {
+    //si la lista no existe
     if (list == NULL)return NULL;
+    //si el ultimo nodo es valido
     if (list->tail == NULL)return NULL;
+    //se crea variable dato que apunta al dato del ultimo nodo
     void* dato = list->tail->data;
+    //se actualiza la posicion actual al final de la lista
     list->current = list->tail;
     return dato;
 }
 
 void * prevList(List * list) {
+    //se verifica si la lista es calida
     if (list == NULL)return NULL;
+    //se verifica si el actual existe o el actual es la cabeza (sino no hay anterior) o si el anterior de la lista es valido
     if ((list->current == NULL) || (list->current == list->head) || (list->current->prev == NULL))return NULL;
+    //se crea dato que apunta al contenido del nodo anterior al actual
     void* dato = list->current->prev->data;
+    //el nodo actual ahora es el anterior
     list->current = list->current->prev;
     return dato;
 }
@@ -84,6 +103,7 @@ void * prevList(List * list) {
 // Puede utilizar la función Node* createNode(void * data) la cual crea, incializa y retorna un nodo con el dato correspondiente.
 
 void pushFront(List * list, void * data) {
+    
 }
 
 void pushBack(List * list, void * data) {
