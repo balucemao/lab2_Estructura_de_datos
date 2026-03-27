@@ -189,7 +189,7 @@ void * popCurrent(List * list) {
         //la cabeza (actual) de la lista  apunta al siguiente nodo y la antigual cabeza se elimina porque ya no esta unida a la lista
         list->head = list->current->next;
         //ahora el prev de la nueva cabeza no apunta a nada
-        //list->head->prev = NULL;
+        list->head->prev = NULL;
         //se retorna el dato del nodo eliminado
         return dato;
     }
