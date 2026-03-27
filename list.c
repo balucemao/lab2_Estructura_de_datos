@@ -139,6 +139,7 @@ void pushCurrent(List * list, void * data) {
     }
     if (list->current == list->tail){
         newNode->prev = list->current;
+        list->current->next = newNode;
         list->tail = newNode;
         list->tail->next = NULL;
         return;
