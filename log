@@ -178,3 +178,16 @@ Fri Mar 27 12:07:42 AM UTC 2026:
  tests:  9|3
 total_score: 30/60
 55069ee
+Fri Mar 27 12:11:39 AM UTC 2026: 
+ list.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:109:9: error: ‘List’ {aka ‘struct List’} has no member named ‘newNode’
+  109 |     list->newNode->next = list->head;
+      |         ^~
+list.c:110:22: error: ‘List’ {aka ‘struct List’} has no member named ‘newNode’
+  110 |     list->head = list->newNode;
+      |                      ^~
+172c968
