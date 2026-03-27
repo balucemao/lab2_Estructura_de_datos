@@ -130,23 +130,37 @@ void pushBack(List * list, void * data) {
 // 5. Programe la función void pushCurrent(List * list, void* data), la cual agrega un dato a continuación del nodo apuntado por list->current.
 
 void pushCurrent(List * list, void * data) {
+    //si la lista es nula
     if (list == NULL)return;
+    //se crea nuevo nodo para insertar despues del current(actual)
     Node* newNode = createNode(data);
+    //si la lista esta vacia, se pega dentro el nuevo nodo en cabeza ycola
     if (list->head == NULL){
         list->head = newNode;
         list->tail = newNode;
         return;
     }
+    //si el actual esta al final de la lista
     if (list->current == list->tail){
+        //el prev del nuevo nodo apunta al actual
         newNode->prev = list->current;
+        //el siguiente al actual apunta al nuevo nodo
         list->current->next = newNode;
+        //la cola apunta al nuevo nodo
         list->tail = newNode;
+        //el siguiente del nuevo nodo es nulo
         list->tail->next = NULL;
         return;
     }
+    //##si hay mas de un dato en la lista##
+    //el prev del nuevo nodo apunta al nodo actual
     newNode->prev = list->current;
+    //el siguiente del nuevo nodo apunta al que viene despues del actual
+    //aqui nuevo nodo ya tiene apuntando atras y adelante
     newNode->next = list->current->next;
+    //el prev del siguiente al nodo actual apunta al nuevo nodo
     list->current->next->prev = newNode;
+    //el siguiente al nodo actual apunta al nuevo nodo
     list->current->next = newNode;
 }
 
