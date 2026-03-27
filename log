@@ -290,3 +290,17 @@ ba23812
 Fri Mar 27 01:29:17 AM UTC 2026: 
  tests:  0|0
 c4d3c95
+Fri Mar 27 01:31:08 AM UTC 2026: 
+ list.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:191:9: error: unknown type name ‘retunr’
+  191 |         retunr dato;
+      |         ^~~~~~
+list.c:191:16: error: unused variable ‘dato’ [-Werror=unused-variable]
+  191 |         retunr dato;
+      |                ^~~~
+cc1: all warnings being treated as errors
+157178a
