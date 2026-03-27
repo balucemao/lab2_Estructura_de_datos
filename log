@@ -211,3 +211,9 @@ list.c:110:22: error: ‘List’ {aka ‘struct List’} has no member named ‘
   110 |     list->head = list->newNode;
       |                      ^~
 bf12d57
+Fri Mar 27 12:20:35 AM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  9|3
+total_score: 30/60
+1f43bc6
