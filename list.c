@@ -131,7 +131,7 @@ void pushBack(List * list, void * data) {
 
 void pushCurrent(List * list, void * data) {
     if (list == NULL)return;
-    void* newNode = createNode(data);
+    Node* newNode = createNode(data);
     if (list->head == NULL){
         list->head = newNode;
         list->tail = newNode;
