@@ -201,3 +201,13 @@ Fri Mar 27 12:17:37 AM UTC 2026:
  1 file changed, 4 insertions(+), 3 deletions(-)
  tests:  0|0
 cd7d6f6
+Fri Mar 27 12:20:18 AM UTC 2026: 
+ list.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:110:22: error: ‘List’ {aka ‘struct List’} has no member named ‘newNode’
+  110 |     list->head = list->newNode;
+      |                      ^~
+bf12d57

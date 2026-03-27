@@ -105,10 +105,11 @@ void * prevList(List * list) {
 void pushFront(List * list, void * data) {
     if (list == NULL)return;
     Node* newNode = createNode(data);
-    list->current = list->head;
+    //recordar que next en el nodo no en el prev del nodo
+    newNode->next = list->head;
+    list->head = list->newNode;
     list->head = newNode;
-    list->current->prev = list->head;
-    list->head = list->current;
+    list->head->prev = NULL;
 }
 
 void pushBack(List * list, void * data) {
