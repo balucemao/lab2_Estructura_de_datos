@@ -234,3 +234,23 @@ Fri Mar 27 12:29:01 AM UTC 2026:
  tests:  10|2
 total_score: 40/60
 33adcdb
+Fri Mar 27 12:37:56 AM UTC 2026: 
+ list.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:141:16: error: dereferencing ‘void *’ pointer [-Werror]
+  141 |         newNode->prev = list->current;
+      |                ^~
+list.c:141:16: error: request for member ‘prev’ in something not a structure or union
+list.c:146:12: error: dereferencing ‘void *’ pointer [-Werror]
+  146 |     newNode->prev = list->current;
+      |            ^~
+list.c:146:12: error: request for member ‘prev’ in something not a structure or union
+list.c:147:12: error: dereferencing ‘void *’ pointer [-Werror]
+  147 |     newNode->next = list->current->next;
+      |            ^~
+list.c:147:12: error: request for member ‘next’ in something not a structure or union
+cc1: all warnings being treated as errors
+358f3d6
