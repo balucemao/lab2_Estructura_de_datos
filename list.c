@@ -178,12 +178,19 @@ void * popBack(List * list) {
 // Nota: El current debe quedar apuntando al nodo siguiente del eliminado.
 
 void * popCurrent(List * list) {
+    //si la lista no es valida
     if (list == NULL)return NULL;
+    //si el nodo acutal no es valido
     if (list->current == NULL)return NULL;
+    //crear dato que apunta al dato dentro del nodo actual
     void* dato = list->current->data;
+    //si el nodo actual es la cabeza
     if (list->current->prev == NULL){
+        //la cabeza (actual) de la lista  apunta al siguiente nodo y la antigual cabeza se elimina porque ya no esta unida a la lista
         list->head = list->current->next;
-        list->head->prev = NULL;
+        //ahora el prev de la nueva cabeza no apunta a nada
+        //list->head->prev = NULL;
+        //se retorna el dato del nodo eliminado
         return dato;
     }
     if (list->current == list->tail){
