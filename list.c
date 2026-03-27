@@ -184,6 +184,8 @@ void * popCurrent(List * list) {
     if (list->current == NULL)return NULL;
     //crear dato que apunta al dato dentro del nodo actual
     void* dato = list->current->data;
+    //crear auxiliar para luego liberar
+    Node* auxiliar = list->current;
     //si el nodo actual es la cabeza
     if (list->current->prev == NULL){
         //la cabeza (actual) de la lista  apunta al siguiente nodo y la antigual cabeza se elimina porque ya no esta unida a la lista
@@ -201,6 +203,7 @@ void * popCurrent(List * list) {
     list->current->next->prev = list->current->prev;
     list->current = list->current->next;
     }
+    free(auxiliar);
     return dato;
 }
 
