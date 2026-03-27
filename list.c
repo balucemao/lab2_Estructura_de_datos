@@ -191,16 +191,16 @@ void * popCurrent(List * list) {
         //ahora el prev de la nueva cabeza no apunta a nada
         list->head->prev = NULL;
         //se retorna el dato del nodo eliminado
-        return dato;
     }
-    if (list->current == list->tail){
+    else if (list->current == list->tail){
         list->tail = list->current->prev;
         list->tail->next = NULL;
-        return dato;
     }
+    else{
     list->current->prev->next = list->current->next;
     list->current->next->prev = list->current->prev;
     list->current = list->current->next;
+    }
     return dato;
 }
 
