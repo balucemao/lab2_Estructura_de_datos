@@ -194,15 +194,23 @@ void * popCurrent(List * list) {
         list->head->prev = NULL;
         //se retorna el dato del nodo eliminado
     }
+    //si el actual esta al final de la lista
     else if (list->current == list->tail){
+        //la cola ahora es el que antes era penultimo
         list->tail = list->current->prev;
+        //ahora el next de la nueva cola es NULL
         list->tail->next = NULL;
     }
+    //en cualquier otro caso
     else{
-    list->current->prev->next = list->current->next;
-    list->current->next->prev = list->current->prev;
-    list->current = list->current->next;
+        //el next del que esta antes que el actual (current)  apunta al siguiente del nodo actual
+        list->current->prev->next = list->current->next;
+        //el prev del que esta despues que el actual (current) apuntal al que viene antes al nodo actual 
+        list->current->next->prev = list->current->prev;
+        //el actual ahora es el que antes venia despues al actual
+        list->current = list->current->next;
     }
+    //se libera el nodo actual original
     free(auxiliar);
     return dato;
 }
