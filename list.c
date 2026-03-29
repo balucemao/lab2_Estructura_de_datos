@@ -134,8 +134,6 @@ void pushCurrent(List * list, void * data) {
     if (list == NULL)return;
     //se crea nuevo nodo para insertar despues del current(actual)
     Node* newNode = createNode(data);
-    //si la lista esta vacia, se pega dentro el nuevo nodo en cabeza ycola
-   
     //si el actual esta al final de la lista
     if (list->current == list->tail){
         //el prev del nuevo nodo apunta al actual
