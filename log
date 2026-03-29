@@ -364,3 +364,14 @@ Sun Mar 29 01:18:02 AM UTC 2026:
  tests:  12|0
 total_score: 60/60
 7d63bc7
+Sun Mar 29 01:19:48 AM UTC 2026: 
+ list.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:141:9: error: ‘eturn’ undeclared (first use in this function)
+  141 |         eturn;
+      |         ^~~~~
+list.c:141:9: note: each undeclared identifier is reported only once for each function it appears in
+7a895e0
